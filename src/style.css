@@ -1,6 +1,7 @@
 /*
 GENERAL STYLING
 */
+@import '~antd/dist/antd.css';
 body {
   background-color: #f5f5f5!important;
   color: #4e4e4e!important;
@@ -15,6 +16,10 @@ h6 {
   color: #1e1e1e;
 }
 
+.fit {
+  object-fit: contain;
+}
+
 a {
   color: #1e1e1e;
   transition: all 0.5s ease-in-out;
@@ -24,6 +29,50 @@ a:hover {
   color: #0078ff;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
+}
+
+
+.cta-btn--resume {
+  border: 1px solid #0078ff;
+  border-radius: 2px;
+  color: #0078ff;
+}
+
+
+.cta-btn--resume:after {
+  background: #0078ff;
+}
+
+.cta-btn:after { 
+  background-color: #0078ff;
+}
+
+.cta-btn:hover { 
+  color: #fff;
+  background-color: #0078ff;
+}
+
+
+.cta-btn {
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.8rem 1.6rem;
+  position: relative;
+  transition: all .6s cubic-bezier(.19,1,.22,1);
+  z-index: 1;
+}
+
+.cta-btn:after {
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transition: all .3s cubic-bezier(.19,1,.22,1);
+  width: 0;
+  z-index: -1;
 }
 
 .p-r {
@@ -140,7 +189,7 @@ a:hover {
 }
 
 .title-a {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -468,8 +517,7 @@ NAVBAR
 .navbar-b.navbar-reduce {
   transition: all .5s ease-in-out;
   background-color: #fff;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 0;
 }
 
 .navbar-b.navbar-reduce .nav-link {
@@ -683,7 +731,7 @@ ABOUT
 .skill-mf .progress {
   background-color: #cde1f8;
   margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
+  border-radius: 5px;
   height: .7rem;
 }
 

@@ -1,61 +1,67 @@
 import React from "react";
-import myImage from "../img/myImage.png";
+import CV from "../img/cv.pdf";
 
 class About extends React.Component {
   constructor() {
     super();
     this.state = {
       skills: [
-        { id: "HTML5_skill", content: "HTML5", porcentage: "80%", value: "80" },
-        { id: "CSS3_skill", content: "CSS3", porcentage: "75%", value: "75" },
         {
           id: "JavaScript_skill",
           content: "JavaScript",
-          porcentage: "90%",
-          value: "90"
+          porcentage: "95%",
+          value: "95"
         },
-        { id: "PHP_skill", content: "PHP", porcentage: "70%", value: "70" },
         {
           id: "ReactJS_skill",
           content: "ReactJS",
-          porcentage: "80%",
-          value: "80"
+          porcentage: "90%",
+          value: "90"
         },
         {
-          id: "Python_skill",
-          content: "Python",
-          porcentage: "75%",
-          value: "75"
+          id: "Angular_skill",
+          content: "Angular",
+          porcentage: "90%",
+          value: "90"
+        },
+        { id: "HTML5_skill", content: "HTML5", porcentage: "80%", value: "80" },
+        { id: "CSS3_skill", content: "CSS3", porcentage: "75%", value: "75" },
+        {
+          id: "Ruby_skill",
+          content: "Ruby",
+          porcentage: "55%",
+          value: "55"
         },
         {
-          id: "VanillaJS_skill",
-          content: "VanillaJS",
-          porcentage: "85%",
-          value: "85"
+          id: "Java_skill",
+          content: "Java",
+          porcentage: "60%",
+          value: "60"
         },
         {
-          id: "Wordpress_skill",
-          content: "Wordpress",
-          porcentage: "80%",
-          value: "80"
-        }
+          id: "SQL_skill",
+          content: "SQL",
+          porcentage: "60%",
+          value: "60"
+        },
       ],
       about_me: [
         {
           id: "first-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "Hi, I'm Hieu, A full stack developer, it's not too much thing to tell about me, but I'm a humorous guy, always stay positive."
         },
         {
           id: "second-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "An opportunity to work and upgrade oneself, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community. I'm presently expanding my experience in application development. I focus on using my interpersonal skills to build good performance, data structures and algorithms, user experience for the application. I hope to develop skills in motion design and my knowledge of the System, and become a partner with you to build a best system. I'm self-confident you'll find me creative, funny and naturally passionate. I'm a forward thinker, which others may find inspiring when working as a team."
         },
         {
           id: "third-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
-        }
+            "I have been working as a fullstack developer. I have a love of design data structures, algorithms, datatbase, and I have lots of experience in the agile team. I loving creating awesome as per my clients's need. I think application performance & user experience when I try to craft something for my clients. Making the system awesome."
+        },
+        
       ]
     };
   }
@@ -68,6 +74,22 @@ class About extends React.Component {
             <div className="col-sm-12">
               <div className="box-shadow-full">
                 <div className="row">
+                  <div className="col-md-6">
+                    <div className="about-me pt-4 pt-md-0">
+                      <div className="title-box-2">
+                        <h5 className="title-left">About Me</h5>
+                      </div>
+                      {this.state.about_me.map(content => {
+                        return (
+                          <p className="lead" key={content.id}>
+                            {content.content}
+                          </p>
+                        );
+                      })}
+                    </div>
+                    <a rel="noreferrer" target="_blank" className="cta-btn cta-btn--resume" href={CV}> View Resume </a>
+                    
+                  </div>
                   <div className="col-md-6">
                     <div className="row">
                       <div
@@ -86,7 +108,7 @@ class About extends React.Component {
                       </div>
                     </div>
                     <div className="skill-mf">
-                      {/* <p className="title-s">Skill</p> */}
+                      <p className="title-s">Skill</p>
                       {this.state.skills.map(skill => {
                         return (
                           <React.Fragment key={skill.id}>
@@ -105,20 +127,6 @@ class About extends React.Component {
                               ></div>
                             </div>
                           </React.Fragment>
-                        );
-                      })}
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="about-me pt-4 pt-md-0">
-                      <div className="title-box-2">
-                        <h5 className="title-left">About Me</h5>
-                      </div>
-                      {this.state.about_me.map(content => {
-                        return (
-                          <p className="lead" key={content.id}>
-                            {content.content}
-                          </p>
                         );
                       })}
                     </div>
